@@ -1,0 +1,21 @@
+INTRODUCTION 
+
+Hello and Welcome to Lost Letter And Article Reconcilation System. 
+
+INSTALLATION
+
+First of all, you need to import the dump file lalrs.db into your mysql. 
+	1. Create a database lalrs
+		mysql> create database lalrs
+	
+	2. Import the dump file 
+		$ mysql -u username -p < lalrs.db
+
+You need to add the mysql-connector-java-*.*.*-bin.jar to your CLASSPATH variable to make it possible to access MySQL databases via JDBC. 
+	
+	export CLASSPATH=$CLASSPATH:/path/to/mysql-connector-java-3.1.8-bin.jar
+
+Compile the files and use it :) More detailed explation is provided in http://greenrabi.wordpress.com/
+
+
+

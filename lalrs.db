@@ -1,0 +1,174 @@
+-- MySQL dump 10.13  Distrib 5.1.61, for debian-linux-gnu (i686)
+--
+-- Host: localhost    Database: lalrs
+-- ------------------------------------------------------
+-- Server version	5.1.61-0ubuntu0.11.10.1
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Current Database: `lalrs`
+--
+
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ `lalrs` /*!40100 DEFAULT CHARACTER SET latin1 */;
+
+USE `lalrs`;
+
+--
+-- Table structure for table `ComplaintHandle`
+--
+
+DROP TABLE IF EXISTS `ComplaintHandle`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `ComplaintHandle` (
+  `ReferenceNo` varchar(32) NOT NULL,
+  `SenderName` varchar(32) NOT NULL,
+  `SenderAddress` varchar(64) NOT NULL,
+  `SenderEmail` varchar(32) NOT NULL,
+  `RecieverName` varchar(32) NOT NULL,
+  `RecieverAddress` varchar(64) NOT NULL,
+  `MediaType` varchar(32) NOT NULL,
+  `ComplaintType` varchar(32) NOT NULL,
+  `Item` varchar(32) NOT NULL,
+  PRIMARY KEY (`ReferenceNo`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ComplaintHandle`
+--
+
+LOCK TABLES `ComplaintHandle` WRITE;
+/*!40000 ALTER TABLE `ComplaintHandle` DISABLE KEYS */;
+INSERT INTO `ComplaintHandle` VALUES ('04212011Complaint36959','Rabi','Allahabad','mile_ac@yahoo.com','Shyam','shyam@hotmail.com','Phone','Letter Not Recieved','Letter'),('04212011Complaint54370','alisha','New York','alisha@gmail.com','rabi','Allahabad','Phone','Letter Not Recieved','letter'),('04212011Complaint183517','Rupesh','Allahabd','rr@gmail.com','Hari','hhh@yy.com','Phone','Not Recieved','Letter'),('04232011Complaint106934','Emily','allahabad','emile@yahoo.com','Smiley','New York','Phone','Not Recieved','Letter'),('04232011Complaint20153','','','','','','','',''),('04232011Complaint49200','','','','','','','',''),('04232011Complaint773938','Pankaj','birgunj','pk@iiita.in','Gaurav','bh4','fax ','Article Not Recieved','Article'),('04242011Complaint503054','Ganesh','ktm','g@gmail.com','Pankaj','ktm','fax','Not Recieved','Letter'),('04242011Complaint222529','','sfsafs','','','sfas','','',''),('04242011Complaint297018','','','','afsadf','','','',''),('04242011Complaint102969','Jim','new york','jim@parson.com','Terry','melbourne','phone','Not Recieved','Article'),('04242011Complaint304143','Rose','allahabad','rose@yahoo.com','Gaurav','bh4','Pfgfnhghm','fghfhg','vngvnbgvn');
+/*!40000 ALTER TABLE `ComplaintHandle` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `Inquiry`
+--
+
+DROP TABLE IF EXISTS `Inquiry`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `Inquiry` (
+  `ReferenceNo` varchar(32) NOT NULL,
+  `Status` varchar(32) NOT NULL,
+  PRIMARY KEY (`ReferenceNo`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `Inquiry`
+--
+
+LOCK TABLES `Inquiry` WRITE;
+/*!40000 ALTER TABLE `Inquiry` DISABLE KEYS */;
+INSERT INTO `Inquiry` VALUES ('04232011Complaint106934','True'),('123','True'),('04232011Complaint773938','True'),('04242011Complaint503054','True'),('04242011Complaint222529','False'),('04242011Complaint297018','False'),('04242011Complaint102969','True'),('04242011Complaint304143','False');
+/*!40000 ALTER TABLE `Inquiry` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `LostArticleMaster`
+--
+
+DROP TABLE IF EXISTS `LostArticleMaster`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `LostArticleMaster` (
+  `ReferenceNo` varchar(32) NOT NULL,
+  `SenderName` varchar(32) NOT NULL,
+  `SenderAddress` varchar(64) NOT NULL,
+  `SenderEmail` varchar(32) NOT NULL,
+  `RecieverName` varchar(32) NOT NULL,
+  `RecieverAddress` varchar(64) NOT NULL,
+  `Category` varchar(32) NOT NULL,
+  `Weight` varchar(32) NOT NULL,
+  PRIMARY KEY (`ReferenceNo`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `LostArticleMaster`
+--
+
+LOCK TABLES `LostArticleMaster` WRITE;
+/*!40000 ALTER TABLE `LostArticleMaster` DISABLE KEYS */;
+INSERT INTO `LostArticleMaster` VALUES ('04212011Article573801','Shyam','','shyam@gmail.com','Hari','Allahabad','letter',''),('04242011Article958784','gupta','gopill','aa@gg.com','hari','hostel-4','letter','400'),('04242011Article112561','','','','','dsfasf','',''),('04242011Article801848','','','','','','','500'),('04242011Article308966','Jim','new york','','','melbourne','Article','300');
+/*!40000 ALTER TABLE `LostArticleMaster` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `LostLetterMaster`
+--
+
+DROP TABLE IF EXISTS `LostLetterMaster`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `LostLetterMaster` (
+  `ReferenceNo` varchar(32) NOT NULL,
+  `SenderName` varchar(32) NOT NULL,
+  `SenderAddress` varchar(64) NOT NULL,
+  `SenderEmail` varchar(32) NOT NULL,
+  `RecieverName` varchar(32) NOT NULL,
+  `RecieverAddress` varchar(64) NOT NULL,
+  `Category` varchar(32) NOT NULL,
+  PRIMARY KEY (`ReferenceNo`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `LostLetterMaster`
+--
+
+LOCK TABLES `LostLetterMaster` WRITE;
+/*!40000 ALTER TABLE `LostLetterMaster` DISABLE KEYS */;
+INSERT INTO `LostLetterMaster` VALUES ('04212011Letter241481','samyog','ghattekulo','mm@gmail.com','Hari','Baneshwar','Phone'),('04242011Letter437618','','','','','',''),('04242011Letter348181','','sadf','','','',''),('04242011Letter759203','Slim','','slim@parson.com','','melbourne','Letter');
+/*!40000 ALTER TABLE `LostLetterMaster` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `login`
+--
+
+DROP TABLE IF EXISTS `login`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `login` (
+  `UserId` varchar(32) NOT NULL,
+  `Username` varchar(32) NOT NULL,
+  `Password` varchar(32) NOT NULL,
+  PRIMARY KEY (`UserId`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `login`
+--
+
+LOCK TABLES `login` WRITE;
+/*!40000 ALTER TABLE `login` DISABLE KEYS */;
+INSERT INTO `login` VALUES ('1','test','helloworld'),('2','emily','helloworld'),('3','Shyam','ss'),('4','hari','mahato'),('145','gaurav','a'),('CHR1234','test','a'),('CHU0001','shane','warne'),('LLM0001','ricky','ponting'),('LAM0001','rahul','dravid'),('RC0001','sourav','ganguly'),('ADM0001','rabi','rabi'),('fdsf','',''),('CHU0002','pankaj','p'),('','fas',''),('CHU0003','pankaj','pankaj'),('CHU0004','prateek','p'),('CHU24','Gopi','gopi'),('123','shyam','hari');
+/*!40000 ALTER TABLE `login` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2012-03-26 21:02:37
